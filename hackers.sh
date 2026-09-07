@@ -1,6 +1,11 @@
 #!/bin/bash
 
-echo "=== IP/domain checker - 100 requests tool ==="
+echo "===  _____      __        __   _
+|__  /___ __\ \      / /__| |__
+  / // __/ __\ \ /\ / / _ \ '_ \
+ / /_\__ \__ \\ V  V /  __/ |_) |
+/____|___/___/ \_/\_/ \___|_.__/
+==="
 read -p "Enter target IP or domain: " target
 
 if [[ -z "$target" ]]; then
