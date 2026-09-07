@@ -6,7 +6,7 @@ read -p "Enter target IP or domain: " target
 if [[ -z "$target" ]]; then
     echo "You must enter an IP or domain!"
     exit 1
- 
+fi 
 paths=(
     "/"
     "/admin"
