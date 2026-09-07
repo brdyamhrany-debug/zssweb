@@ -140,6 +140,6 @@ for path in "${paths[@]}"; do
 done
 
 echo ""
-echo "============================================"
+echo ""
 echo "Done! Checked all 100 paths."
-echo "============================================"
+echo ""
