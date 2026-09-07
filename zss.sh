@@ -1,12 +1,22 @@
 #!/bin/bash
 
-echo "===  _____  ＺｓｓＷｅｂ Ｖ１．０_____==="
-read -p "Enter target IP or domain: " target
+echo "===  _____ ZssWeb V2.o_____==="
+read -p "Enter target ip or domain: " target
 
 if [[ -z "$target" ]]; then
     echo "You must enter an IP or domain!"
     exit 1
 fi 
+
+
+echo -n "Custom path (optional): "
+read -r custom_path
+if [[ -n "$custom_path" ]]; then
+    [[ "${custom_path:0:1}" != "/" ]] && custom_path="/$custom_path"
+    paths+=("$custom_path")
+    echo "[+] Added: $custom_path"
+fi
+
 paths=(
     "/"
     "/admin"
@@ -119,23 +129,23 @@ paths=(
 )
 
 echo ""
-echo "============================================"
+echo ""
 echo "Target: $target"
 echo "Total requests: ${#paths[@]}"
-echo "============================================"
+echo ""
 echo ""
 
 count=1
 for path in "${paths[@]}"; do
     url="http://${target}${path}"
     response_code=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout 5 --max-time 10 "$url" 2>/dev/null)
-    
+
     if [[ "$response_code" != "000" ]]; then
         echo "[$count] $url -> Status: $response_code"
     else
         echo "[$count] $url -> No response / Timeout"
     fi
-    
+
     count=$((count + 1))
 done
 
