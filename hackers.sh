@@ -1,19 +1,12 @@
 #!/bin/bash
 
-echo "===  _____      __        __   _
-|__  /___ __\ \      / /__| |__
-  / // __/ __\ \ /\ / / _ \ '_ \
- / /_\__ \__ \\ V  V /  __/ |_) |
-/____|___/___/ \_/\_/ \___|_.__/
-==="
+echo "===  _____  ＺｓｓＷｅｂ Ｖ１．０_____==="
 read -p "Enter target IP or domain: " target
 
 if [[ -z "$target" ]]; then
     echo "You must enter an IP or domain!"
     exit 1
-fi
-
-# لیست ۱۰۰ مسیر رایج مربوط به ساخت سایت و مدیریت محتوا
+ 
 paths=(
     "/"
     "/admin"
